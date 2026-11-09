@@ -1,0 +1,295 @@
+{
+  "format": "memory-retrieval-evaluation-v1",
+  "scope": "fictional only; labels fixed before implementation; holdout not used for threshold selection",
+  "facts": [
+    {
+      "id": "doc.01",
+      "content": "Le riunioni del progetto Aurora si tengono il martedì alle 09:30. Il mercoledì è riservato al lavoro individuale."
+    },
+    {
+      "id": "doc.02",
+      "content": "I verbali di Aurora vengono conservati in formato Markdown nella cartella Decisioni. I PDF sono copie da leggere e non la fonte da aggiornare."
+    },
+    {
+      "id": "doc.03",
+      "history": [
+        "La consegna del progetto Aurora era prevista per il 17 novembre."
+      ],
+      "content": "La consegna definitiva del progetto Aurora è il 24 novembre. La precedente scadenza del 17 novembre è superata."
+    },
+    {
+      "id": "doc.04",
+      "content": "Per il laboratorio Boreale il tetto di spesa approvato è 320 euro. Un acquisto superiore richiede una nuova autorizzazione."
+    },
+    {
+      "id": "doc.05",
+      "content": "Il riferimento inventato del collaudo è ZXQ-731. Questa stringa serve alla ricerca esatta e non è una credenziale."
+    },
+    {
+      "id": "doc.06",
+      "content": "Marta desidera notifiche silenziose dopo le 18 e un riepilogo via email il venerdì. Non vuole avvisi sul telefono durante la sera."
+    },
+    {
+      "id": "doc.07",
+      "content": "Per il gruppo Atlas le segnalazioni urgenti arrivano per telefono; la posta elettronica viene letta solo il lunedì."
+    },
+    {
+      "id": "doc.08",
+      "content": "Le fotografie del laboratorio sono archiviate su un disco esterno locale. Non è prevista una copia delle fotografie nel cloud."
+    },
+    {
+      "id": "doc.09",
+      "content": "Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. Il laboratorio dimostrativo contiene cartelle, materiali e piccoli esempi ripetibili. La documentazione elenca gli strumenti e le procedure del gruppo. La procedura di ripristino finale usa il comando fittizio ripara-aurora con opzione locale. Il recupero riparte dall’ultima copia verificata."
+    },
+    {
+      "id": "doc.10",
+      "content": "Il caffè del gruppo è disponibile nella sala nord. L’accesso è consentito soltanto dalle 08:00 alle 11:00."
+    },
+    {
+      "id": "doc.11",
+      "content": "Per le trasferte del progetto Selene si prenota il treno, non l’aereo. I biglietti vengono acquistati con almeno sette giorni di anticipo."
+    },
+    {
+      "id": "doc.12",
+      "content": "La sala riunioni di Selene si trova al secondo piano, stanza 204. La sala 102 è invece il magazzino."
+    },
+    {
+      "id": "doc.13",
+      "content": "Le recensioni del codice per Atlas richiedono due revisori. Chi scrive la modifica non può dare entrambe le approvazioni."
+    },
+    {
+      "id": "doc.14",
+      "content": "Il servizio sperimentale resta spento durante il fine settimana. Le prove automatiche ripartono lunedì alle 07:00."
+    },
+    {
+      "id": "doc.15",
+      "content": "Il vecchio colore del logo era arancione; ora il colore ufficiale è blu. Non utilizzare il logo arancione per nuovi materiali."
+    },
+    {
+      "id": "doc.16",
+      "content": "Le modifiche della documentazione si propongono come patch separate. Una proposta non equivale a una decisione del gruppo."
+    },
+    {
+      "id": "doc.17",
+      "content": "La finestra di manutenzione di Aurora è ogni giovedì alle 20:00; durante la manutenzione le letture rimangono disponibili."
+    },
+    {
+      "id": "doc.18",
+      "content": "Gli esempi dei manuali usano esclusivamente dati inventati. I documenti reali dei clienti non vengono inclusi nei test."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "doc.old",
+      "state": "deleted",
+      "content": "La procedura segreta di recupero usa la parola fittizia temporanea rimbalzo."
+    },
+    {
+      "id": "doc.future",
+      "state": "future",
+      "content": "Il nuovo recapito del laboratorio Boreale sarà in piazza delle Stelle 99."
+    },
+    {
+      "id": "doc.expired",
+      "state": "expired",
+      "content": "Lo sconto del laboratorio Boreale era valido soltanto per il mese di gennaio."
+    },
+    {
+      "id": "doc.foreign",
+      "state": "foreign_owner",
+      "content": "La password dimostrativa del gruppo estraneo è la stringa inventata rimbalzo."
+    }
+  ],
+  "queries": [
+    {
+      "id": "dev.01",
+      "split": "development",
+      "query": "Quando ci ritroviamo per coordinare Aurora?",
+      "relevant": [
+        "doc.01"
+      ]
+    },
+    {
+      "id": "dev.02",
+      "split": "development",
+      "query": "Dove si aggiornano i verbali?",
+      "relevant": [
+        "doc.02"
+      ]
+    },
+    {
+      "id": "dev.03",
+      "split": "development",
+      "query": "Qual è la scadenza aggiornata di Aurora?",
+      "relevant": [
+        "doc.03"
+      ]
+    },
+    {
+      "id": "dev.04",
+      "split": "development",
+      "query": "Quanto possiamo spendere per Boreale?",
+      "relevant": [
+        "doc.04"
+      ]
+    },
+    {
+      "id": "dev.05",
+      "split": "development",
+      "query": "ZXQ-731",
+      "relevant": [
+        "doc.05"
+      ]
+    },
+    {
+      "id": "dev.06",
+      "split": "development",
+      "query": "Come preferisce ricevere gli avvisi Marta la sera?",
+      "relevant": [
+        "doc.06"
+      ]
+    },
+    {
+      "id": "dev.07",
+      "split": "development",
+      "query": "Come recuperiamo il laboratorio da una copia?",
+      "relevant": [
+        "doc.09"
+      ]
+    },
+    {
+      "id": "dev.08",
+      "split": "development",
+      "query": "doc.12",
+      "relevant": [
+        "doc.12"
+      ]
+    },
+    {
+      "id": "dev.09",
+      "split": "development",
+      "query": "Con quale mezzo viaggiamo per Selene?",
+      "relevant": [
+        "doc.11"
+      ]
+    },
+    {
+      "id": "dev.10",
+      "split": "development",
+      "query": "Quante persone devono controllare una modifica al codice Atlas?",
+      "relevant": [
+        "doc.13"
+      ]
+    },
+    {
+      "id": "dev.11",
+      "split": "development",
+      "query": "Qual è il codice fiscale del direttore?",
+      "relevant": []
+    },
+    {
+      "id": "dev.12",
+      "split": "development",
+      "query": "Quale assicurazione medica abbiamo stipulato?",
+      "relevant": []
+    },
+    {
+      "id": "dev.13",
+      "split": "development",
+      "query": "Qual è il numero di serie del telescopio?",
+      "relevant": []
+    },
+    {
+      "id": "test.01",
+      "split": "holdout",
+      "query": "Dove conserviamo i resoconti scritti degli incontri Aurora?",
+      "relevant": [
+        "doc.02"
+      ]
+    },
+    {
+      "id": "test.02",
+      "split": "holdout",
+      "query": "Il termine del 17 novembre vale ancora per Aurora?",
+      "relevant": [
+        "doc.03"
+      ]
+    },
+    {
+      "id": "test.03",
+      "split": "holdout",
+      "query": "Dove sono custodite le foto del laboratorio?",
+      "relevant": [
+        "doc.08"
+      ]
+    },
+    {
+      "id": "test.04",
+      "split": "holdout",
+      "query": "Quale procedura uso per tornare all’ultima copia verificata?",
+      "relevant": [
+        "doc.09"
+      ]
+    },
+    {
+      "id": "test.05",
+      "split": "holdout",
+      "query": "caffe sala nord",
+      "relevant": [
+        "doc.10"
+      ]
+    },
+    {
+      "id": "test.06",
+      "split": "holdout",
+      "query": "Che stanza devo raggiungere per la riunione di Selene?",
+      "relevant": [
+        "doc.12"
+      ]
+    },
+    {
+      "id": "test.07",
+      "split": "holdout",
+      "query": "Le prove girano anche sabato?",
+      "relevant": [
+        "doc.14"
+      ]
+    },
+    {
+      "id": "test.08",
+      "split": "holdout",
+      "query": "Di che colore deve essere il logo nuovo?",
+      "relevant": [
+        "doc.15"
+      ]
+    },
+    {
+      "id": "test.09",
+      "split": "holdout",
+      "query": "Quando viene fatta la manutenzione Aurora?",
+      "relevant": [
+        "doc.17"
+      ]
+    },
+    {
+      "id": "test.10",
+      "split": "holdout",
+      "query": "Quali contenuti possiamo mettere negli esempi dei manuali?",
+      "relevant": [
+        "doc.18"
+      ]
+    },
+    {
+      "id": "test.11",
+      "split": "holdout",
+      "query": "Che stipendio ha il custode del museo?",
+      "relevant": []
+    },
+    {
+      "id": "test.12",
+      "split": "holdout",
+      "query": "Quanto pesa il satellite lanciato ieri?",
+      "relevant": []
+    }
+  ]
+}

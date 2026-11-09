@@ -1,0 +1,38 @@
+{
+  "scenarios": [
+    {
+      "scenario": 1,
+      "title": "A preference reaches another assistant",
+      "before_approval": 0,
+      "read_by_client_b": "In the fictional Aurora project, I prefer training in the morning.",
+      "version": 1,
+      "source": "fictional walkthrough"
+    },
+    {
+      "scenario": 2,
+      "title": "A decision changes while another client is behind",
+      "current": "The fictional Aurora project deadline is November 24.",
+      "version": 2,
+      "stale_write": "VERSION_CONFLICT",
+      "previous_version_available": true
+    },
+    {
+      "scenario": 3,
+      "title": "Embeddings are unavailable while the fact stays stored",
+      "save": "stored",
+      "index_during_outage": "pending",
+      "hybrid_during_outage": "lexical",
+      "degraded": true,
+      "index_after_recovery": "indexed",
+      "fact_written_once": true
+    }
+  ],
+  "scope": {
+    "fictional_data": true,
+    "simulated_identity_and_review": true,
+    "native_sqlite": true,
+    "precomputed_vectors": true,
+    "live_inference": false,
+    "network_requests": 0
+  }
+}

@@ -1,0 +1,14 @@
+Shared Memory MCP
+Copyright 2026 Shared Memory MCP contributors.
+
+Extracted and adapted from the author's Persistent Memory MCP development
+project. The source project evaluated third-party memory systems; their engines,
+applications and model weights are not vendored in this distribution.
+
+This distribution includes precomputed embedding outputs for fictional text
+from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 at revision
+e8f8c211226b894fcb81acc59f3b34ba3efd5f42. See THIRD_PARTY.md.
+
+The optional OAuth runtime uses @cloudflare/workers-oauth-provider 1.2.4,
+Copyright (c) 2025 Cloudflare, Inc., under the MIT license. The full notice is
+preserved in licenses/cloudflare-workers-oauth-provider-MIT.txt.

@@ -1,0 +1,23 @@
+{
+  "fictional": true,
+  "description": "Synthetic records for the pinned Second Brain qualification; not the owner's preferences.",
+  "texts": {
+    "preference": "Nel progetto inventato Aurora preferisco sessioni di allenamento al mattino.",
+    "corrected": "Nel progetto inventato Aurora preferisco sessioni di allenamento nel tardo pomeriggio.",
+    "stale": "Nel progetto inventato Aurora preferisco sessioni di allenamento la sera.",
+    "paraphrase": "Qual è l'orario preferito per l'attività fisica?",
+    "distractor1": "Per il progetto inventato Nebula il colore del logo sarà blu scuro.",
+    "distractor2": "Nel laboratorio fittizio Vega i documenti tecnici devono essere scritti in inglese.",
+    "distractor3": "La ricetta dimostrativa di Orion richiede farina di riso e latte di cocco.",
+    "retry": "Per la demo Lumen la lingua preferita delle risposte è l'italiano.",
+    "outage": "Per il prototipo inventato Selene il formato preferito degli export è JSON.",
+    "outageQuery": "Selene formato export",
+    "proposal": "Proposta non approvata per il progetto inventato Lyra: spostare la riunione al venerdì.",
+    "keyword": "Aurora allenamento",
+    "retryQuery": "Lumen lingua"
+  },
+  "embeddingInputs": [
+    "Qual l'orario preferito"
+  ],
+  "embeddingInputsNote": "Additional inference inputs emitted by the pinned upstream query normalizer, not additional labelled evaluation questions."
+}

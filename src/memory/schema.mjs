@@ -1,0 +1,78 @@
+import {LEXICAL_SCHEMA} from './lexical-schema.mjs';
+/** Prototype schema. Each item is a complete SQLite statement, including trigger bodies. */
+export const SQL_NOW = "CAST((julianday('now')-2440587.5)*86400000 AS INTEGER)";
+export const SCHEMA = [
+`CREATE TABLE IF NOT EXISTS memory_proposals (
+ id TEXT PRIMARY KEY, owner_id TEXT NOT NULL, collection_id TEXT NOT NULL,
+ request_id TEXT NOT NULL, digest TEXT NOT NULL, payload_json TEXT NOT NULL,
+ fact_id TEXT NOT NULL, operation TEXT NOT NULL CHECK(operation IN ('put','delete')),
+ expected_version INTEGER NOT NULL CHECK(expected_version>=0), creator TEXT NOT NULL,
+ created_at_ms INTEGER NOT NULL, expires_at_ms INTEGER NOT NULL,
+ status TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending','approved','consumed')),
+ UNIQUE(owner_id,collection_id,request_id))`,
+`CREATE TABLE IF NOT EXISTS memory_approvals (
+ id TEXT PRIMARY KEY, proposal_id TEXT NOT NULL UNIQUE REFERENCES memory_proposals(id),
+ owner_id TEXT NOT NULL, collection_id TEXT NOT NULL, digest TEXT NOT NULL,
+ approved_by TEXT NOT NULL, approved_at_ms INTEGER NOT NULL, expires_at_ms INTEGER NOT NULL,
+ consumed_at_ms INTEGER)`,
+`CREATE TABLE IF NOT EXISTS memory_facts (
+ owner_id TEXT NOT NULL, collection_id TEXT NOT NULL, id TEXT NOT NULL,
+ version INTEGER NOT NULL, deleted INTEGER NOT NULL CHECK(deleted IN (0,1)),
+ indexed_version INTEGER NOT NULL DEFAULT 0, indexed_fingerprint TEXT, updated_at_ms INTEGER NOT NULL,
+ PRIMARY KEY(owner_id,collection_id,id))`,
+`CREATE TABLE IF NOT EXISTS memory_versions (
+ owner_id TEXT NOT NULL, collection_id TEXT NOT NULL, fact_id TEXT NOT NULL, version INTEGER NOT NULL,
+ operation TEXT NOT NULL, payload_json TEXT NOT NULL, actor TEXT NOT NULL, recorded_at_ms INTEGER NOT NULL,
+ PRIMARY KEY(owner_id,collection_id,fact_id,version))`,
+`CREATE TABLE IF NOT EXISTS memory_receipts (
+ owner_id TEXT NOT NULL, collection_id TEXT NOT NULL, request_id TEXT NOT NULL,
+ digest TEXT NOT NULL, proposal_id TEXT NOT NULL, approval_id TEXT NOT NULL,
+ fact_id TEXT NOT NULL, operation TEXT NOT NULL, version INTEGER NOT NULL,
+ actor TEXT NOT NULL, committed_at_ms INTEGER NOT NULL,
+ PRIMARY KEY(owner_id,collection_id,request_id))`,
+`CREATE TABLE IF NOT EXISTS memory_index_jobs (
+ owner_id TEXT NOT NULL, collection_id TEXT NOT NULL, fact_id TEXT NOT NULL, version INTEGER NOT NULL,
+ operation TEXT NOT NULL, state TEXT NOT NULL DEFAULT 'pending' CHECK(state IN ('pending','running','done')),
+ attempts INTEGER NOT NULL DEFAULT 0, available_at_ms INTEGER NOT NULL DEFAULT 0,
+ lease_token TEXT, lease_until_ms INTEGER, last_error_code TEXT,
+ PRIMARY KEY(owner_id,collection_id,fact_id,version))`,
+`CREATE INDEX IF NOT EXISTS memory_jobs_pending ON memory_index_jobs(state,available_at_ms)`,
+`CREATE TRIGGER IF NOT EXISTS memory_approval_guard BEFORE INSERT ON memory_approvals BEGIN
+ SELECT CASE WHEN NOT EXISTS(SELECT 1 FROM memory_proposals p WHERE p.id=NEW.proposal_id
+ AND p.owner_id=NEW.owner_id AND p.collection_id=NEW.collection_id AND p.digest=NEW.digest
+ AND p.status='pending' AND p.expires_at_ms>${SQL_NOW}) THEN RAISE(ABORT,'PROPOSAL_UNAVAILABLE') END;
+END`,
+`CREATE TRIGGER IF NOT EXISTS memory_approval_applied AFTER INSERT ON memory_approvals BEGIN
+ UPDATE memory_proposals SET status='approved' WHERE id=NEW.proposal_id;
+END`,
+`CREATE TRIGGER IF NOT EXISTS memory_commit_guard BEFORE INSERT ON memory_receipts BEGIN
+ SELECT CASE WHEN NOT EXISTS(SELECT 1 FROM memory_proposals p JOIN memory_approvals a ON a.proposal_id=p.id
+ WHERE p.id=NEW.proposal_id AND a.id=NEW.approval_id AND p.owner_id=NEW.owner_id
+ AND p.collection_id=NEW.collection_id AND a.owner_id=NEW.owner_id AND a.collection_id=NEW.collection_id
+ AND p.digest=NEW.digest AND a.digest=NEW.digest AND p.request_id=NEW.request_id
+ AND p.fact_id=NEW.fact_id AND p.operation=NEW.operation AND NEW.version=p.expected_version+1
+ AND p.status='approved' AND a.consumed_at_ms IS NULL
+ AND p.expires_at_ms>${SQL_NOW} AND a.expires_at_ms>${SQL_NOW}) THEN RAISE(ABORT,'APPROVAL_REQUIRED') END;
+ SELECT CASE WHEN EXISTS(SELECT 1 FROM memory_facts f WHERE f.owner_id=NEW.owner_id
+ AND f.collection_id=NEW.collection_id AND f.id=NEW.fact_id AND f.deleted=1) THEN RAISE(ABORT,'DELETED_ID') END;
+ SELECT CASE WHEN NEW.operation='delete' AND NOT EXISTS(SELECT 1 FROM memory_facts f
+ WHERE f.owner_id=NEW.owner_id AND f.collection_id=NEW.collection_id AND f.id=NEW.fact_id) THEN RAISE(ABORT,'NOT_FOUND') END;
+ SELECT CASE WHEN NEW.operation='put' AND NOT EXISTS(SELECT 1 FROM memory_facts f WHERE f.owner_id=NEW.owner_id AND f.collection_id=NEW.collection_id AND f.id=NEW.fact_id)
+ AND (SELECT COUNT(*) FROM memory_facts f WHERE f.owner_id=NEW.owner_id AND f.collection_id=NEW.collection_id AND f.deleted=0)>=200 THEN RAISE(ABORT,'CAPACITY_REACHED') END;
+ SELECT CASE WHEN NEW.version!=COALESCE((SELECT version FROM memory_facts f WHERE f.owner_id=NEW.owner_id
+ AND f.collection_id=NEW.collection_id AND f.id=NEW.fact_id),0)+1 THEN RAISE(ABORT,'VERSION_CONFLICT') END;
+END`,
+`CREATE TRIGGER IF NOT EXISTS memory_commit_applied AFTER INSERT ON memory_receipts BEGIN
+ INSERT INTO memory_versions(owner_id,collection_id,fact_id,version,operation,payload_json,actor,recorded_at_ms)
+ SELECT NEW.owner_id,NEW.collection_id,NEW.fact_id,NEW.version,NEW.operation,p.payload_json,NEW.actor,NEW.committed_at_ms
+ FROM memory_proposals p WHERE p.id=NEW.proposal_id;
+ INSERT INTO memory_facts(owner_id,collection_id,id,version,deleted,indexed_version,updated_at_ms)
+ VALUES(NEW.owner_id,NEW.collection_id,NEW.fact_id,NEW.version,CASE WHEN NEW.operation='delete' THEN 1 ELSE 0 END,0,NEW.committed_at_ms)
+ ON CONFLICT(owner_id,collection_id,id) DO UPDATE SET version=excluded.version,deleted=excluded.deleted,updated_at_ms=excluded.updated_at_ms;
+ INSERT INTO memory_index_jobs(owner_id,collection_id,fact_id,version,operation)
+ VALUES(NEW.owner_id,NEW.collection_id,NEW.fact_id,NEW.version,NEW.operation);
+ UPDATE memory_approvals SET consumed_at_ms=NEW.committed_at_ms WHERE id=NEW.approval_id;
+ UPDATE memory_proposals SET status='consumed' WHERE id=NEW.proposal_id;
+END`,
+];
+export async function installSchema(db) { for (const sql of [...SCHEMA,...LEXICAL_SCHEMA]) await db.prepare(sql).run(); }

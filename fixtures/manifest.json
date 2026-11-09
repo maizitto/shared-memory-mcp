@@ -1,0 +1,15 @@
+{
+  "format": "fictional-test-fixtures-v1",
+  "files": {
+    "fixtures/embeddings/hybrid.json": "912bbaa14a715fdef30a9ede7d5c3a238f4ee185a029c639f772f94fbd131ba5",
+    "fixtures/embeddings/second-brain.json": "697ef9ca88b814865c34dd3d9267a1eae2ddba092c70a2ef7f9b23b0ea77c3cc",
+    "fixtures/memory-sharing/hybrid-retrieval.json": "d63cd5788229caadded6e2938bf5b64c3cc02b1bbb794169b572c5f9da7cc834",
+    "fixtures/memory-sharing/lexical-baseline/chunks.mjs": "8bfb2effbeb451c9e0a47ef47a15eed17c7db873af6a6762203aaa99dd5ed932",
+    "fixtures/memory-sharing/lexical-baseline/ledger.mjs": "61e48a3d7d68bc3143214d090d1f9a83bb503986e68179e4218db164a119cfdd",
+    "fixtures/memory-sharing/lexical-baseline/schema.mjs": "d32c1ec9f6eb39ee17b627debdb1a075a510a798857e89c701f71588716ebda7",
+    "fixtures/memory-sharing/lexical-baseline/search.mjs": "8db70cf81a58987e3ba4001fbcc98522576c005d0a4d8b1f3c0ffa8ca14e1b53",
+    "fixtures/memory-sharing/lexical-baseline/vectors.mjs": "22320cdfdaa427a94f8626d6a1203b691425c80d4313fbc0317838364ef3a951",
+    "fixtures/memory-sharing/second-brain.json": "206107f6f772e5a29a731d6895d894ea54569c59ee379876418f13ff7e76f1fe",
+    "fixtures/workerd.mjs": "b5624a3719709bd62c92d2164ac9f5369c0dbe25484f39e7816d80d472452798"
+  }
+}

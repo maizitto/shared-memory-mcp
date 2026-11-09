@@ -1,0 +1,10 @@
+{
+  "name": "shared-memory-oauth-local-never-deploy",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "d1_databases": [{"binding":"DB","database_name":"fictional-oauth-local","database_id":"00000000-0000-0000-0000-000000000000","remote":false}],
+  "kv_namespaces": [{"binding":"OAUTH_KV","id":"00000000000000000000000000000001","remote":false}]
+}

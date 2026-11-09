@@ -1,0 +1,9 @@
+{
+  "name": "shared-memory-review-local-never-deploy",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "d1_databases": [{"binding":"DB","database_name":"synthetic-review-local","database_id":"00000000-0000-0000-0000-000000000000","remote":false}]
+}

@@ -1,0 +1,439 @@
+{
+  "format": "source-extraction-v1",
+  "date": "2026-10-28",
+  "source_project": "Persistent Memory MCP (local development project)",
+  "files": [
+    {
+      "source": "integrations/shared-memory/ledger.mjs",
+      "destination": "src/memory/ledger.mjs",
+      "source_sha256": "61e48a3d7d68bc3143214d090d1f9a83bb503986e68179e4218db164a119cfdd",
+      "adapted": false,
+      "candidate_sha256": "61e48a3d7d68bc3143214d090d1f9a83bb503986e68179e4218db164a119cfdd"
+    },
+    {
+      "source": "integrations/shared-memory/schema.mjs",
+      "destination": "src/memory/schema.mjs",
+      "source_sha256": "8318e6d37e29eed6762211b04ee4ff135d946e3c5399a891ea429b16479f78d2",
+      "adapted": false,
+      "candidate_sha256": "8318e6d37e29eed6762211b04ee4ff135d946e3c5399a891ea429b16479f78d2"
+    },
+    {
+      "source": "integrations/shared-memory/retention.mjs",
+      "destination": "src/memory/retention.mjs",
+      "source_sha256": "afa1c8d81e7b5b3f294d75740c5fa51a53b14e8f8983dfb1fb050bf165869482",
+      "adapted": false,
+      "candidate_sha256": "d8d0077a0691faa53014722dfc1aed13aa4a2e198bec3c111249c5999601b395"
+    },
+    {
+      "source": "integrations/shared-memory/lexical.mjs",
+      "destination": "src/memory/lexical.mjs",
+      "source_sha256": "8bca15535bc1907d758dfe69cdcfd4c026c370717a5ecc2583116107b4cace73",
+      "adapted": false,
+      "candidate_sha256": "8bca15535bc1907d758dfe69cdcfd4c026c370717a5ecc2583116107b4cace73"
+    },
+    {
+      "source": "integrations/shared-memory/lexical-schema.mjs",
+      "destination": "src/memory/lexical-schema.mjs",
+      "source_sha256": "7b94e1eefaf50a57744453e54ee4dcd9d069423de122a90706348ebaf8e1a40f",
+      "adapted": false,
+      "candidate_sha256": "7b94e1eefaf50a57744453e54ee4dcd9d069423de122a90706348ebaf8e1a40f"
+    },
+    {
+      "source": "integrations/shared-memory/lexical-index.mjs",
+      "destination": "src/memory/lexical-index.mjs",
+      "source_sha256": "173c1912c630da0b900d2c48241e00205e8252870a0369a08c91d96c218de205",
+      "adapted": false,
+      "candidate_sha256": "173c1912c630da0b900d2c48241e00205e8252870a0369a08c91d96c218de205"
+    },
+    {
+      "source": "integrations/shared-memory/indexed-search.mjs",
+      "destination": "src/memory/indexed-search.mjs",
+      "source_sha256": "dd26b3180d82a8109fe6d22b9a8a1f67ab19afb441d103cf6c103bb1f1d8d653",
+      "adapted": false,
+      "candidate_sha256": "dd26b3180d82a8109fe6d22b9a8a1f67ab19afb441d103cf6c103bb1f1d8d653"
+    },
+    {
+      "source": "integrations/shared-memory/chunks.mjs",
+      "destination": "src/memory/chunks.mjs",
+      "source_sha256": "8bfb2effbeb451c9e0a47ef47a15eed17c7db873af6a6762203aaa99dd5ed932",
+      "adapted": false,
+      "candidate_sha256": "8bfb2effbeb451c9e0a47ef47a15eed17c7db873af6a6762203aaa99dd5ed932"
+    },
+    {
+      "source": "integrations/shared-memory/vectors.mjs",
+      "destination": "src/memory/vectors.mjs",
+      "source_sha256": "22320cdfdaa427a94f8626d6a1203b691425c80d4313fbc0317838364ef3a951",
+      "adapted": false,
+      "candidate_sha256": "22320cdfdaa427a94f8626d6a1203b691425c80d4313fbc0317838364ef3a951"
+    },
+    {
+      "source": "integrations/shared-memory/search.mjs",
+      "destination": "src/memory/search.mjs",
+      "source_sha256": "cfbc27751bb679b426eb22a0cf255854faa97febbd83d0314b39147010f6a3d6",
+      "adapted": false,
+      "candidate_sha256": "cfbc27751bb679b426eb22a0cf255854faa97febbd83d0314b39147010f6a3d6"
+    },
+    {
+      "source": "integrations/shared-memory/indexer.mjs",
+      "destination": "src/memory/indexer.mjs",
+      "source_sha256": "335ae5409f75aba345279e06d5a23f217319d1a6fad633f2a04bf34149b63b81",
+      "adapted": false,
+      "candidate_sha256": "335ae5409f75aba345279e06d5a23f217319d1a6fad633f2a04bf34149b63b81"
+    },
+    {
+      "source": "integrations/shared-memory/search-runtime.mjs",
+      "destination": "src/memory/search-runtime.mjs",
+      "source_sha256": "42589b12db2fe7e6b2e99734817a4d130320091f0665654df9da07c9dcb23fe0",
+      "adapted": true,
+      "candidate_sha256": "4f66ea9b9b70970a55832fa6af89013c52251ad72fa8b904f9e46792ccb747cc"
+    },
+    {
+      "source": "integrations/shared-memory/mcp.mjs",
+      "destination": "src/memory/mcp.mjs",
+      "source_sha256": "55cefafa2c39809751c053520fbed8315bed5c86798d14854874dfca3d009699",
+      "adapted": true,
+      "candidate_sha256": "0ca5b6d24b4a98eda13a94601b684ace792992ffb84f5159def49605ef75b917",
+      "previous_candidate_sha256": "2eae0afb232e311581482ff3896d640521a9fc6d8d8171b62734f41fd3b21ed4"
+    },
+    {
+      "source": "integrations/shared-memory/review/app.mjs",
+      "destination": "src/memory/review/app.mjs",
+      "source_sha256": "59586be585e4e582a3b92610d3448564ad7cc670a27904701af7e76f5a85c6d7",
+      "adapted": true,
+      "candidate_sha256": "7f23b5e01f4ba334f66f9aabd27df2366b032ac582df370555c0994c8c407497",
+      "previous_candidate_sha256": "630dfcbccc97f176092603acd871d70b65484021185e9deb60603361815a39d7"
+    },
+    {
+      "source": "integrations/shared-memory/review/facade.mjs",
+      "destination": "src/memory/review/facade.mjs",
+      "source_sha256": "5b8be51a0b8380c9d31578435f3f0eb8bef1dddcb41ceeac2206f4efe8ae2dc4",
+      "adapted": true,
+      "candidate_sha256": "aee20bb3ab2743011ff8b61cdfd58c344d4bdbbcbfc79c815fc5f3c36889a639",
+      "previous_candidate_sha256": "f66cf481cd494015549b6e68e2a56d8078a956f4bbe0f95309db1e0fb6bf5a62"
+    },
+    {
+      "source": "integrations/shared-memory/review/identity.mjs",
+      "destination": "src/memory/review/identity.mjs",
+      "source_sha256": "c5e5796765231659a1a40c4f6257d5068c980fb286e9ec25947c14ee5f5c87ce",
+      "adapted": false,
+      "candidate_sha256": "c5e5796765231659a1a40c4f6257d5068c980fb286e9ec25947c14ee5f5c87ce"
+    },
+    {
+      "source": "integrations/shared-memory/review/schema.mjs",
+      "destination": "src/memory/review/schema.mjs",
+      "source_sha256": "bf46f290d53c4d136a9f849fc4ebe301c21bae28ba8ca14030204d6c89f29466",
+      "adapted": false,
+      "candidate_sha256": "bf46f290d53c4d136a9f849fc4ebe301c21bae28ba8ca14030204d6c89f29466"
+    },
+    {
+      "source": "integrations/shared-memory/review/page.mjs",
+      "destination": "src/memory/review/page.mjs",
+      "source_sha256": "10c312fe1d6df72f57c924aaabd969ef9b49817ecf7dc42977d7900f37bc2aeb",
+      "adapted": true,
+      "candidate_sha256": "e657e31b506539df0c85f881d92203a305f29fc42c6712f8fd430b15c7372c86",
+      "previous_candidate_sha256": "cca3afbc937ef9bad4690eacb905b4c9f0a33c2db50b9e944809b76ca5419bc1"
+    },
+    {
+      "source": "integrations/shared-memory/recovery/archive.mjs",
+      "destination": "src/memory/recovery/archive.mjs",
+      "source_sha256": "f71b12952bccf37f9431b53d2aac6746cacca8c2634fd5a151517f9a04350cdf",
+      "adapted": false,
+      "candidate_sha256": "f71b12952bccf37f9431b53d2aac6746cacca8c2634fd5a151517f9a04350cdf"
+    },
+    {
+      "source": "integrations/shared-memory/recovery/restore.mjs",
+      "destination": "src/memory/recovery/restore.mjs",
+      "source_sha256": "c084c557013d6aa9bb4fe213e0683e5d9587fe81191dacbd2d53d307b4a12d74",
+      "adapted": false,
+      "candidate_sha256": "c084c557013d6aa9bb4fe213e0683e5d9587fe81191dacbd2d53d307b4a12d74"
+    },
+    {
+      "source": "integrations/shared-memory/recovery/bundle.mjs",
+      "destination": "src/memory/recovery/bundle.mjs",
+      "source_sha256": "df2efe2e302be0645355537b9fc322aeadfdb54264deebb5b782d41747d5c3cf",
+      "adapted": false,
+      "candidate_sha256": "df2efe2e302be0645355537b9fc322aeadfdb54264deebb5b782d41747d5c3cf"
+    },
+    {
+      "source": "integrations/shared-memory/recovery/sqlite.mjs",
+      "destination": "src/memory/recovery/sqlite.mjs",
+      "source_sha256": "4527c09aa7ca0c331d2085ceb862b70eb6dabaad2594af7ed12b17bd2c51dad0",
+      "adapted": false,
+      "candidate_sha256": "4527c09aa7ca0c331d2085ceb862b70eb6dabaad2594af7ed12b17bd2c51dad0"
+    },
+    {
+      "source": "integrations/shared-memory/recovery/cli.mjs",
+      "destination": "src/memory/recovery/cli.mjs",
+      "source_sha256": "ced04077a1343bf2945841716c040f8fa2e5260fcf288ffc6390d571c4b87456",
+      "adapted": false,
+      "candidate_sha256": "ced04077a1343bf2945841716c040f8fa2e5260fcf288ffc6390d571c4b87456"
+    },
+    {
+      "source": "integrations/coach-mcp/http.mjs",
+      "destination": "src/platform/http.mjs",
+      "source_sha256": "bb510084307380a5831d2e48fe19ea0393634fa1efbd8dac5eac8c1141782fe4",
+      "adapted": false,
+      "candidate_sha256": "bb510084307380a5831d2e48fe19ea0393634fa1efbd8dac5eac8c1141782fe4"
+    },
+    {
+      "source": "integrations/coach-mcp/auth/github.mjs",
+      "destination": "src/platform/github.mjs",
+      "source_sha256": "ac10a489e3d601248b6d27c9e7107c61e172f494b066e5891fc950ed0d985396",
+      "adapted": true,
+      "candidate_sha256": "b61839b0b439abb0a4c7d68c8de2b730f780958f0a6203681b0dcb401cd35fbf"
+    },
+    {
+      "source": "integrations/coach-mcp/auth/registry.mjs",
+      "destination": "src/platform/d1.mjs",
+      "source_sha256": "ea3aad3a9ab704294497a404a77d5934d143f7e8b32abe73e5e067a70daf7f8a",
+      "adapted": true,
+      "candidate_sha256": "9090a79691c499de471c9718692f2ed58a797c9c9ef034f1d3eb8f9046add381"
+    },
+    {
+      "source": "integrations/coach-mcp/auth/consent.mjs",
+      "destination": "src/platform/html.mjs",
+      "source_sha256": "db94eb0b174ca4f04ef390a162a4127929cc4513f3e6cf500b04bccd0dd56089",
+      "adapted": true,
+      "candidate_sha256": "ca9c69315ab700c1da6150514b11d58dcfd0fcfc19c49150165ec462d5af2989"
+    },
+    {
+      "source": "integrations/shared-memory/testkit.mjs",
+      "destination": "test/memory/testkit.mjs",
+      "source_sha256": "e5fd95917143f86b171452f57036358317e9f9bf32016b05383849e5c80f8b61",
+      "adapted": true,
+      "candidate_sha256": "3f6dd56ef291b4b5eba3bc61317fb7675b56ac43ae45d009c3f9ad8b9d81ad95"
+    },
+    {
+      "source": "integrations/shared-memory/ledger.test.mjs",
+      "destination": "test/memory/ledger.test.mjs",
+      "source_sha256": "91a1158fd220b43086ab015e666e1a7541a978156d0b0891284bc82232c30091",
+      "adapted": true,
+      "candidate_sha256": "61bcfa35babf388bf940cb006c59a652d2496a32ca0f786d4f9ba441d53fd750"
+    },
+    {
+      "source": "integrations/shared-memory/retention.test.mjs",
+      "destination": "test/memory/retention.test.mjs",
+      "source_sha256": "fc81c90b09d14f6c0f4ef43051eaee716c5f3f2d841793c1313a919c47681dd7",
+      "adapted": true,
+      "candidate_sha256": "000e42d2adee6fdf8fd115a9c78f60205b02034c6089fb56903cb85f39230f1d"
+    },
+    {
+      "source": "integrations/shared-memory/hybrid.test.mjs",
+      "destination": "test/memory/hybrid.test.mjs",
+      "source_sha256": "4f348b03dcbf3806e505b8750d9f9921249dd3efbf082c1fa6818dac2f93e930",
+      "adapted": true,
+      "candidate_sha256": "b954b3b1bb572d493556da271f45921c2fa64a8a9d9d15951a273add7334f902"
+    },
+    {
+      "source": "integrations/shared-memory/optimization.test.mjs",
+      "destination": "test/memory/optimization.test.mjs",
+      "source_sha256": "7788e9d3e922bccc68607ca533cab008d7e10a76b27b99502d0e1152ea1c0df7",
+      "adapted": true,
+      "candidate_sha256": "4f6d4813b0c8e864315f9f5f730446318d797262d5da7a792e744c37ac28a827"
+    },
+    {
+      "source": "integrations/shared-memory/lexical-index.test.mjs",
+      "destination": "test/memory/lexical-index.test.mjs",
+      "source_sha256": "41715b8c7fd4941fb10d91cbd1c8cbb9d6aafd7032ca9ff23b09d0392a0e1f75",
+      "adapted": true,
+      "candidate_sha256": "8a651e1b9cd6b7f7065cabbc95ab41318a8471d8bae454df2a94e4d260c64fac"
+    },
+    {
+      "source": "integrations/shared-memory/search-runtime.test.mjs",
+      "destination": "test/memory/search-runtime.test.mjs",
+      "source_sha256": "05e5f93e6375d135e6eb27e511bfa4486368f023a537b4a6a18a2c7b2f5d80b3",
+      "adapted": true,
+      "candidate_sha256": "0d82a515f05d8aa80f64720a4b2202e71dd8ca70a377df3fe1110e9edba60641"
+    },
+    {
+      "source": "integrations/shared-memory/review/review.test.mjs",
+      "destination": "test/memory/review/review.test.mjs",
+      "source_sha256": "2d0cff21aef925751e5bff1a0ba2ae323ebded0e1152c79f617faf4f555284ab",
+      "adapted": true,
+      "candidate_sha256": "abe0b7032a8227b3658eedc94586c2f92a917cd9280a668ee0ffb00ca08144fd",
+      "previous_candidate_sha256": "8d5cfc9be03c5f1862436c35b65979fa9b60bd29d9884dd68e78b4caaae79101"
+    },
+    {
+      "source": "integrations/shared-memory/review/facade.test.mjs",
+      "destination": "test/memory/review/facade.test.mjs",
+      "source_sha256": "c810fd0c9fe08b133625051ae01ab659929f74e5b918b6eb972f09fc246a9992",
+      "adapted": true,
+      "candidate_sha256": "30b3d09559e74ea946a386b30477809a5f60e24ffcdbb882cc69a732290c45bc",
+      "previous_candidate_sha256": "4e1c4d4f52f9fd91a25bcb2cee11e0f77972313978d34153e02f02aed2a965e2"
+    },
+    {
+      "source": "integrations/shared-memory/recovery/recovery.test.mjs",
+      "destination": "test/memory/recovery/recovery.test.mjs",
+      "source_sha256": "bda05968be885e4fc16e6e36db601b5926b4deaba16c1bce6d37c5cdc72a7eb1",
+      "adapted": true,
+      "candidate_sha256": "71e28ce507a79ffe179f94eee88480e7fb3e75f3f4983f8b4edce3688cbf2d4e"
+    },
+    {
+      "source": "fixtures/memory-sharing/lexical-baseline/search.mjs",
+      "destination": "fixtures/memory-sharing/lexical-baseline/search.mjs",
+      "source_sha256": "8db70cf81a58987e3ba4001fbcc98522576c005d0a4d8b1f3c0ffa8ca14e1b53",
+      "adapted": false,
+      "candidate_sha256": "8db70cf81a58987e3ba4001fbcc98522576c005d0a4d8b1f3c0ffa8ca14e1b53"
+    },
+    {
+      "source": "fixtures/memory-sharing/lexical-baseline/chunks.mjs",
+      "destination": "fixtures/memory-sharing/lexical-baseline/chunks.mjs",
+      "source_sha256": "8bfb2effbeb451c9e0a47ef47a15eed17c7db873af6a6762203aaa99dd5ed932",
+      "adapted": false,
+      "candidate_sha256": "8bfb2effbeb451c9e0a47ef47a15eed17c7db873af6a6762203aaa99dd5ed932"
+    },
+    {
+      "source": "fixtures/memory-sharing/lexical-baseline/vectors.mjs",
+      "destination": "fixtures/memory-sharing/lexical-baseline/vectors.mjs",
+      "source_sha256": "22320cdfdaa427a94f8626d6a1203b691425c80d4313fbc0317838364ef3a951",
+      "adapted": false,
+      "candidate_sha256": "22320cdfdaa427a94f8626d6a1203b691425c80d4313fbc0317838364ef3a951"
+    },
+    {
+      "source": "fixtures/memory-sharing/lexical-baseline/ledger.mjs",
+      "destination": "fixtures/memory-sharing/lexical-baseline/ledger.mjs",
+      "source_sha256": "61e48a3d7d68bc3143214d090d1f9a83bb503986e68179e4218db164a119cfdd",
+      "adapted": false,
+      "candidate_sha256": "61e48a3d7d68bc3143214d090d1f9a83bb503986e68179e4218db164a119cfdd"
+    },
+    {
+      "source": "fixtures/memory-sharing/lexical-baseline/schema.mjs",
+      "destination": "fixtures/memory-sharing/lexical-baseline/schema.mjs",
+      "source_sha256": "d32c1ec9f6eb39ee17b627debdb1a075a510a798857e89c701f71588716ebda7",
+      "adapted": false,
+      "candidate_sha256": "d32c1ec9f6eb39ee17b627debdb1a075a510a798857e89c701f71588716ebda7"
+    },
+    {
+      "source": "integrations/shared-memory/migrations/0001_shared_memory_review.sql",
+      "destination": "src/memory/migrations/0001_shared_memory_review.sql",
+      "source_sha256": "d032483b4c19007f4d6ad41ed6fefc4d55e6746536897f37fef94fc5b18075a5",
+      "adapted": false,
+      "candidate_sha256": "d032483b4c19007f4d6ad41ed6fefc4d55e6746536897f37fef94fc5b18075a5"
+    },
+    {
+      "source": "integrations/shared-memory/migrations/0002_grants_and_purges.sql",
+      "destination": "src/memory/migrations/0002_grants_and_purges.sql",
+      "source_sha256": "ac92d7ee2fa0b58db64dd17c708cf789a89b27fa792ce2730231a9d0e9def320",
+      "adapted": false,
+      "candidate_sha256": "ac92d7ee2fa0b58db64dd17c708cf789a89b27fa792ce2730231a9d0e9def320"
+    },
+    {
+      "source": "integrations/shared-memory/migrations/0001_lexical_index.sql",
+      "destination": "src/memory/migrations/0001_lexical_index.sql",
+      "source_sha256": "a38e211fe67be958a9d7f3458a7de676fbf6b9200395a5275fe430070a43cfe8",
+      "adapted": false,
+      "candidate_sha256": "a38e211fe67be958a9d7f3458a7de676fbf6b9200395a5275fe430070a43cfe8"
+    },
+    {
+      "source": "integrations/shared-memory/local-test/worker.mjs",
+      "destination": "test/workerd/core/worker.mjs",
+      "source_sha256": "050717cdf496b6b929387ba6f975bc46eb4a3311e353717addb14e8960c54bb8",
+      "adapted": true,
+      "candidate_sha256": "73074a578da0f5144b78311179224493f80332840a7ede789fe7d468320f9b72"
+    },
+    {
+      "source": "integrations/shared-memory/review/local-test/worker.mjs",
+      "destination": "test/workerd/review/worker.mjs",
+      "source_sha256": "454356b2d8a6280d67355ecc99df650ab38f80c3d6b17d23b4f70aea0ee3c9f3",
+      "adapted": true,
+      "candidate_sha256": "b5d037a8c3ca0aa914ab8b0d60421e8e5b5dcfeb640bcef349152a9d6538569e"
+    },
+    {
+      "source": "integrations/shared-memory/prototype.workerd.mjs",
+      "destination": "test/workerd/core.test.mjs",
+      "source_sha256": "6b714da52c95704cb1b84cbfb466f4064cc7a6d7bb56cdce8d1c3c402c2193ff",
+      "adapted": true,
+      "candidate_sha256": "78a946b08137cb46dd413c1fc204ac2238be1fe5f456e640fdab9d2cabf94c25"
+    },
+    {
+      "source": "integrations/shared-memory/review/review.workerd.mjs",
+      "destination": "test/workerd/review.test.mjs",
+      "source_sha256": "6021f6966baf0fdb42edfc3076e42e59d1a4d6dab44088904047d303e0d90ac0",
+      "adapted": true,
+      "candidate_sha256": "c05fc8c24e9dfc53372dd7b6a5b6451c26a5bd774318b7f5aa28f71b885fddde",
+      "previous_candidate_sha256": "a8cbb07e56c9668ab37677f00eba4782c152fb8e95d3d25951e92a4d7b9cc632"
+    },
+    {
+      "source": "fictional-second-brain-embedding-fixture",
+      "destination": "fixtures/embeddings/second-brain.json",
+      "source_sha256": "f078a4d2a9ad44aef2df41fe0eecf9fcdba902179454008c2ed0b3f0d7a57a47",
+      "adapted": true,
+      "candidate_sha256": "697ef9ca88b814865c34dd3d9267a1eae2ddba092c70a2ef7f9b23b0ea77c3cc"
+    },
+    {
+      "source": "fictional-hybrid-embedding-fixture",
+      "destination": "fixtures/embeddings/hybrid.json",
+      "source_sha256": "6ee65ecb15dc58e2575f07b59cca957f221303471121548516cc633908a4652e",
+      "adapted": true,
+      "candidate_sha256": "912bbaa14a715fdef30a9ede7d5c3a238f4ee185a029c639f772f94fbd131ba5"
+    },
+    {
+      "source": "integrations/shared-memory/review/manage_clients.mjs",
+      "destination": "scripts/clients.mjs",
+      "source_sha256": "5b6007d65f5e7b8f248191801a1efb6f5b823e98e00171c80b896d4b7d64960b",
+      "adapted": true,
+      "candidate_sha256": "3c7b1fe2393229849e9edbc2ffbbeef241254ce0e89d1562728b8f2b318057ff",
+      "previous_candidate_sha256": "c7c30d499b353bdaa6c9d05881c061f326678ba6dd7adbbbe8bf8108d35fa5a0"
+    }
+  ],
+  "revisions": [
+    {
+      "date": "2026-11-08",
+      "description": "English owner-review UI and corresponding behavioral assertions; English primary documentation and walkthroughs.",
+      "updated_extracted_files": [
+        "src/memory/review/app.mjs",
+        "src/memory/review/page.mjs",
+        "test/memory/review/review.test.mjs",
+        "test/memory/review/facade.test.mjs",
+        "test/workerd/review.test.mjs"
+      ],
+      "semantic_fixtures_unchanged": true,
+      "ledger_schema_and_mcp_contracts_unchanged": true
+    },
+    {
+      "date": "2026-11-08",
+      "version": "0.2.0",
+      "description": "Optional one-owner MCP OAuth with Cloudflare provider 1.2.4, additive D1 connection schema, operator revocation and isolated protocol tests. Wrangler/security lockfile update.",
+      "updated_extracted_files": [
+        "src/memory/mcp.mjs",
+        "src/memory/review/facade.mjs"
+      ],
+      "new_adapter": "src/auth/",
+      "design_reference": "The author's earlier integrations/coach-mcp/auth/ adapter; rewritten for this standalone memory resource and the provider 1.2.4 API. No private runtime or configuration imported.",
+      "semantic_fixtures_unchanged": true,
+      "canonical_ledger_schema_unchanged": true
+    },
+    {
+      "date": "2026-11-08",
+      "description": "Publication review: English neutral examples in MCP descriptions; explicit prompt-injection/credential/recovery boundaries; qualify cloud setup and optional retrieval benefits.",
+      "updated_extracted_files": [
+        "src/memory/mcp.mjs"
+      ],
+      "runtime_behavior_unchanged": true,
+      "semantic_fixtures_unchanged": true
+    },
+    {
+      "date": "2026-11-08",
+      "version": "0.3.0",
+      "description": "Absolute bearer/review lifetimes, minimum OAuth consent defaults, offline preflight, encrypted operator D1 snapshots and retrieval evaluation. No canonical schema or dependency changes.",
+      "updated_extracted_files": [
+        "src/memory/mcp.mjs",
+        "src/memory/review/app.mjs",
+        "src/memory/review/facade.mjs",
+        "src/memory/review/page.mjs",
+        "test/memory/review/review.test.mjs",
+        "test/memory/review/facade.test.mjs",
+        "test/workerd/review.test.mjs",
+        "scripts/clients.mjs"
+      ],
+      "new_implementation_files": [
+        "src/platform/credentials.mjs",
+        "scripts/doctor.mjs",
+        "scripts/backup.mjs",
+        "examples/evaluate-retrieval.mjs"
+      ],
+      "semantic_fixtures_unchanged": true,
+      "cloud_d1_recovery": "five checks passed on fictional data; temporary target deleted; full-service recovery remains unqualified"
+    }
+  ]
+}

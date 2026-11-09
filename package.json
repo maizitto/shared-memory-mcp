@@ -1,0 +1,32 @@
+{
+  "name": "shared-memory-mcp",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Open-source personal memory for MCP assistants, running in your own Cloudflare account with free resources as a starting point.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.22.0 <23"
+  },
+  "scripts": {
+    "test": "node scripts/test.mjs unit",
+    "test:workerd": "node scripts/test.mjs workerd",
+    "demo": "node --experimental-sqlite examples/two-clients.mjs",
+    "demo:scenarios": "node --experimental-sqlite examples/scenarios.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "schema": "node scripts/schema.mjs",
+    "client": "node scripts/clients.mjs",
+    "connection": "node scripts/connections.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "backup": "node scripts/backup.mjs",
+    "evaluate:retrieval": "node --experimental-sqlite examples/evaluate-retrieval.mjs"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "wrangler": "4.158.0"
+  },
+  "dependencies": {
+    "@cloudflare/workers-oauth-provider": "1.2.4"
+  }
+}
